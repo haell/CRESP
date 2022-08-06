@@ -5,9 +5,10 @@ class CRUD:
     def __init__(self):
         self.con = sqlite3.connect('cresp.db')
         self.cur = self.con.cursor()
+        print('0')
 
     def create(self):
-        CRUD.temporizador()
+        CRUD.temporizador(1)
         # Create table
         self.cur.execute('''CREATE TABLE stocks
                        (date text, trans text, symbol text, qty real, price real)''')
@@ -27,5 +28,9 @@ class CRUD:
         from time import sleep
         a = b
         sleep(a)
+        print("esperei!")
 
 
+if __name__ == '__main__':
+    db = CRUD()
+    db.create()
