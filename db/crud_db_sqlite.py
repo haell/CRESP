@@ -11,10 +11,12 @@ class CRUD:
         Método para criação de banco de dados, com uso da biblioteca sqlite3.
         :return: Cria um banco de dados.
         """
+        print('Criando database')
         CRUD.temporizador(1)
         # Create table
         self.cur.execute('''CREATE TABLE IF NOT EXISTS stocks(date text, trans text, symbol text, qty real, price real)''')
 
+        print('Inserindo valores no database')
         # Insert a row of data
         self.cur.execute("INSERT INTO stocks VALUES ('2006-01-05','BUY','RHAT',100,35.14)")
 
