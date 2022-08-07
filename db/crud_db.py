@@ -38,5 +38,5 @@ if __name__ == '__main__':
     hh = CRUD()
     # hh.create_table()
     # hh.update()
-    hh.delete()
+    # hh.delete()
     hh.get()
