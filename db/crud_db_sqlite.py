@@ -27,12 +27,17 @@ class CRUD:
 
     @classmethod
     def temporizador(cls, b):
+        """
+        Método que atrasa em 1 segundo a execução.
+        :param b: numero inteiro
+        :return: 1 segundo de pausa.
+        """
         from time import sleep
-        a = b
-        sleep(a)
-        print("esperei!")
+        aa = b
+        sleep(aa)
 
 
 if __name__ == '__main__':
     db = CRUD()
     db.create()
+    help(db.create)
