@@ -11,8 +11,14 @@ class CRUD:
         Método que cria tabela no banco de dados, com uso da biblioteca sqlite3.
         :return: Cria um tabela banco de dados.
         """
-        self.cur.execute(
-            '''CREATE TABLE IF NOT EXISTS stocks(date text, trans text, symbol text, qty real, price real)''')
+        self.cur.execute('''begin''')
+        try:
+            self.cur.execute(
+                '''CREATE TABLE IF NOT EXISTS stocks(date text, trans text, symbol text, qty real, price real)''')
+            self.con.commit()
+        except sqlite3.Error:
+            print('Failed!')
+            self.cur.execute('''rollback''')
 
     @classmethod
     def temporizador(cls, b):
